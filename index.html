@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+ <html>
+     <head>
+         <meta charset="UTF-8">
+         <title>Stolen code, stolen notes, never posted, never contributed, free education, TriHard 7</title>
+     </head>
+<body>
+    <script>
+        // generates pc selection
+    function computerPlay(){
+        let num = Math.floor(Math.random() * (4-1) + 1)
+        if(num === 1){
+            return("rock")
+        } else if(num === 2){
+            return("paper")
+        } else{
+            return("scissors")
+        }
+
+    }
+
+    function playerPick(pick){
+        // user selection
+        pick.toLowerCase()
+        if(pick === "rock"){
+            return("rock")
+        } else if(pick === "paper"){
+            return "paper"
+        } else(pick === "scissors");{
+            return("scissors")
+        }
+        
+    }
+
+    function playRound(playerSelection, computerSelection){
+        // 2 tie 0 pc 1 player
+        let winner
+        if(playerSelection === computerSelection){
+            winner = 2;
+        } else if(playerSelection === "rock"){
+            if(computerSelection === "paper"){
+                winner = 0
+            } else if(computerSelection === "scissors"){
+                winner = 1
+            }
+        }
+        else if(playerSelection === "paper"){
+            if(computerSelection === "scissors"){
+                winner = 0
+            } else if(computerSelection === "rock"){
+                winner = 1
+            }
+        }
+        else if(playerSelection === "scissors"){
+            if(computerSelection === "rock"){
+                winner = 0
+            } else if(computerSelection === "paper"){
+                winner = 1
+            }
+        } return winner
+
+    }
+
+    function game(){
+        const computerPick = computerPlay()
+        for(i = 1; i < 8; i ++){
+            let pick = prompt("Round " + i + " choose rock paper or scissors")
+            round = playRound(playerPick(pick), computerPick)
+            if(round === 0){
+                console.log("VI LOST ZULUL")
+            }else if(round === 1){
+                console.log("VI VON ZULUL")
+            }else if(round === 2){
+                console.log("VAVE 2 ZULUL")
+            }
+        }
+    }
+
+    game()
+     </script>
+
+</body>
+</html>
